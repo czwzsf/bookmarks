@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block title %}
+    用户登入
+{% endblock %}
+
+{% block content %}
+    <h1>用户登入</h1>
+    <p>请用下面的表单来进行登入</p>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <p><input type="submit" value="登入"></p>
+    </form>
+{% endblock %}
